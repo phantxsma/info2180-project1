@@ -6,7 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
     const emailInput = form.querySelector('input[name="email"]');
     const userEmail = emailInput.value;
-    messageDiv.textContent = `Thank you! Your email address "${userEmail}" has been added to our mailing list!`;
+    if (userEmail) {
+      messageDiv.textContent = `Thank you! Your email address "${userEmail}" has been added to our mailing list!`;
+    } else {
+      messageDiv.textContent = 'Please enter a valid email address.';
+    }
     form.reset();
   });
 });
